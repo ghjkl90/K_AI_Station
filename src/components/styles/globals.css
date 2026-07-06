@@ -671,14 +671,13 @@ body {
   line-height: 1.6;
   margin: 0;
 }
-
 /* ==========================================================
    7. 푸터 하단 영역 (MainFooter)
    ========================================================== */
 .main-footer {
   width: 100%;
   background-color: #000000;
-  padding: 60px 20px;
+  padding: 20px 20px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -692,6 +691,7 @@ body {
 }
 
 .footer-top {
+  width: 100%; /* 너비 꽉 차게 보장 */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -723,27 +723,32 @@ body {
   flex-direction: column;
   gap: 12px;
   padding: 32px 0 40px 0;
+  margin: 0;
+  align-items: flex-start;
 }
 
 .info-row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   color: #888888;
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 .info-row .divider {
   color: #333333;
   user-select: none;
+  margin: 0 4px;
 }
 
 .footer-bottom p {
   color: #888888;
   font-size: 0.9rem;
   margin: 0;
+  letter-spacing: -0.01em;
 }
 
 @media (max-width: 768px) {
