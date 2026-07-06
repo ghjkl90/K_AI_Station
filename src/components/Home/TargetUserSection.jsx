@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import main5 from "../assets/main5.png";
 import main6 from "../assets/main6.png";
 import main7 from "../assets/main7.png";
 
 export default function TargetUserSection() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in-visible");
+        }
+      },
+      { threshold: 0.1 },
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="target-section">
+    <section className="target-section fade-in-section" ref={sectionRef}>
       <div className="target-header">
         <span className="badge-target">Target User</span>
         <h2 className="target-title">이런 분들께 추천합니다.</h2>

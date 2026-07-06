@@ -1,18 +1,16 @@
 import React from "react";
-import main2 from "../assets/main2.png"; // 확장자 및 대소문자 확인[cite: 1]
+import main2 from "../assets/main2.png";
 
 export default function Hero() {
   return (
     <section className="hero-section">
       <div className="hero-container">
-        {/* 1. 타이틀 */}
         <h1 className="hero-title">
           누구나, 어렵지 않게
           <br />
           AI를 시작할 수 있는 곳.
         </h1>
 
-        {/* 2. 버튼 그룹 */}
         <div className="hero-buttons">
           <button className="btn-cta btn-download">
             <svg
@@ -54,9 +52,7 @@ export default function Hero() {
           </button>
         </div>
 
-        {/* 3. 배경 위에 얹을 대시보드 창 요소 (main2.png) */}
         <div className="hero-mockup-wrapper">
-          {/* ⚠️ Next.js 호환을 위해 src={main2} 부분을 src={main2.src}로 교체했습니다. */}
           <img
             src={main2.src}
             alt="K-AI Station Dashboard"

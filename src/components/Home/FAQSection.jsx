@@ -54,7 +54,7 @@ export default function FAQSection() {
                   <span className="prefix-q">Q</span>
                   <h3>{item.q}</h3>
                 </div>
-                {/* 사라지지 않도록 구조를 확실히 잡은 화살표 아이콘 영역 */}
+                {/* 화살표 아이콘 영역 */}
                 <div className="faq-arrow-icon">
                   <svg
                     fill="none"

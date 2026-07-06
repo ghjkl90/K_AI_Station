@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function WhySection() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in-visible");
+        }
+      },
+      { threshold: 0.1 },
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="why-section">
+    <section className="why-section fade-in-section" ref={sectionRef}>
       <div className="why-header">
         <span className="badge-why">Why</span>
         <h2 className="why-title">K-AI Station이 왜 필요할까요?</h2>

@@ -1,90 +1,15 @@
-.hero-section {
-  position: relative;
+/* ==========================================================
+   0. 공통 기본 스타일 (Global / Reset)
+   ========================================================== */
+html,
+body {
   width: 100%;
-  max-width: 1920px;
-  height: 1080px;
-  background-image: url("../assets/main1.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow-x: hidden;
 }
 
-/* 버튼 그룹 */
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-  margin: 0 0 48px 0;
-}
-
-.btn-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 28px;
-  border-radius: 50px;
-  font-size: 1rem;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-}
-
-/* 부모 컨테이너: 요소를 위에서부터 차례대로 쌓고, 하단 밀착을 허용하도록 변경 */
-.hero-container {
-  width: 100%;
-  max-width: 1200px;
-  min-height: 100vh; /* 부모 섹션과 높이를 맞춰 바닥 끝을 인식하게 함 */
-  padding: 120px 20px 0 20px; /* 상단 여백 유지 */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* 가로 가운데 정렬 */
-  justify-content: flex-start; /* ⚠️ 세로 정중앙 정렬(center)을 해제하고 위에서부터 쌓이게 변경 */
-}
-
-/* 타이틀과 버튼 그룹 스타일 유지 */
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.4;
-  letter-spacing: -0.02em;
-  margin: 0 0 32px 0;
-  text-align: center;
-}
-
-.hero-mockup-wrapper {
-  width: 100%;
-  max-width: 1000px;
-  height: auto;
-
-  margin-top: auto;
-  margin-bottom: 0;
-
-  box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.2);
-
-  border-radius: 16px 16px 0 0;
-
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-bottom: none; /* ⚠️ 바닥에 테두리 선 때문에 생기는 미세한 틈까지 방지 */
-
-  flex-shrink: 0;
-}
-
-/* 이미지 수축 및 왜곡 방지 */
-.hero-mockup-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-
+/* ==========================================================
+   1. 헤더 영역 (MainHeader)
+   ========================================================== */
 .main-header {
   position: absolute;
   top: 0;
@@ -126,11 +51,99 @@
 }
 
 .icon-globe {
-  width: 22px;
-  height: 22px;
+  width: 27px;
+  height: 27px;
 }
 
-/* 섹션 전체 레이아웃 (위아래 여백 마련) */
+/* ==========================================================
+   2. 히어로 영역 (HeroSection)
+   ========================================================== */
+.hero-section {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1920px;
+  height: 90vh;
+  min-height: 700px;
+  padding-top: 90px;
+  background-image: url("../assets/main1.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100vh; /* 부모 섹션과 높이를 맞춰 바닥 끝을 인식하게 함 */
+  padding: 120px 20px 0 20px; /* 상단 여백 유지 */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 가로 가운데 정렬 */
+  justify-content: flex-start; /* 세로 위에서부터 쌓이게 설정 */
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  margin: 0 0 32px 0;
+  text-align: center;
+}
+
+/* 버튼 그룹 */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin: 0 0 48px 0;
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 1rem;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+/* 대시보드 목업 이미지 래퍼 */
+.hero-mockup-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  margin-top: 50px;
+  margin-bottom: 0;
+  box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.2);
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: none;
+  flex-shrink: 0;
+}
+
+.hero-mockup-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ==========================================================
+   3. 소개 영역 (WhySection)
+   ========================================================== */
 .why-section {
   width: 100%;
   max-width: 1920px;
@@ -142,13 +155,11 @@
   align-items: center;
 }
 
-/* 상단 타이틀 배치 */
 .why-header {
   text-align: center;
   margin-bottom: 56px;
 }
 
-/* Why 배지 */
 .badge-why {
   display: inline-block;
   padding: 4px 16px;
@@ -160,7 +171,6 @@
   margin-bottom: 16px;
 }
 
-/* 대제목 */
 .why-title {
   font-size: 2.25rem;
   font-weight: 700;
@@ -169,28 +179,29 @@
   letter-spacing: -0.02em;
 }
 
-/* 메인 카드: 에셋에 넣어두신 main3.png를 여기에 배경으로 적용합니다 */
 .why-content-card {
   width: 100%;
   max-width: 1040px;
-  height: 520px; /* 시안 비율에 맞춘 적절한 높이 고정 */
-  background-image: url("../assets/main3.png"); /* 상대 경로 설정 */
+  height: 520px;
+  background-image: url("../assets/main3.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 24px;
   padding: 40px;
   box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* 상단 박스와 하단 박스 그리드를 양끝 분할 */
+  justify-content: space-between;
 }
 
-/* 공통 반투명 유리(Glassmorphism) 박스 스타일 */
+/* 유리 박스 공통 스타일 */
 .glass-box {
-  border-radius: 16px;
-  backdrop-filter: blur(12px); /* 뒤 배경이 흐려지는 효과 */
+  border-radius: 24px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   display: flex;
   justify-content: center;
@@ -213,11 +224,13 @@
 .box-top {
   width: 100%;
   height: 140px;
-  background-color: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   padding: 20px;
+  backdrop-filter: blur(12px);
 }
 
+/* 하단 3열 그리드 레이아웃 */
 .box-bottom-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -226,36 +239,32 @@
   height: 240px;
 }
 
+/* 하단 개별 카드 그라데이션 컬러링 */
+
 .box-green {
-  background: linear-gradient(
-    135deg,
-    rgba(34, 139, 94, 0.5),
-    rgba(20, 80, 55, 0.6)
-  );
-  border: 1px solid rgba(52, 211, 153, 0.3);
+  background: linear-gradient(135deg, #00c87580, #008c5580);
+  border: 1px solid #00ff9d80;
   padding: 16px;
+  backdrop-filter: blur(8px);
 }
 
 .box-blue {
-  background: linear-gradient(
-    135deg,
-    rgba(30, 110, 160, 0.5),
-    rgba(15, 60, 100, 0.6)
-  );
-  border: 1px solid rgba(96, 165, 250, 0.3);
+  background: linear-gradient(135deg, #00c3ff80, #00afff80);
+  border: 1px solid #00e5ff80;
   padding: 16px;
+  backdrop-filter: blur(8px);
 }
 
 .box-purple {
-  background: linear-gradient(
-    135deg,
-    rgba(100, 30, 90, 0.5),
-    rgba(50, 10, 50, 0.6)
-  );
-  border: 1px solid rgba(192, 132, 252, 0.3);
+  background: linear-gradient(135deg, #e126d380, #b11faa80);
+  border: 1px solid #ff66f480;
   padding: 16px;
+  backdrop-filter: blur(8px);
 }
 
+/* ==========================================================
+   4. 기능 및 특징 영역 (FeaturesSection)
+   ========================================================== */
 .features-section {
   width: 100%;
   max-width: 1920px;
@@ -296,9 +305,10 @@
   max-width: 1040px;
   display: flex;
   gap: 40px;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
+/* 아코디언 메뉴 리스트 그룹 */
 .features-accordion-group {
   flex: 1;
   display: flex;
@@ -308,12 +318,37 @@
 
 .accordion-item {
   width: 100%;
-  background-color: #f1f3f9;
   border-radius: 20px;
   padding: 24px 32px;
   box-sizing: border-box;
   transition: all 0.25s ease;
   border: 1px solid transparent;
+}
+
+/* 비활성화 상태 메뉴 */
+.accordion-item.collapsed {
+  background-color: #f1f3f9;
+}
+
+.accordion-item.collapsed .accordion-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* 활성화 상태 메뉴 */
+.accordion-item.active {
+  background-color: #ffffff;
+  border: 1px solid #7cd175;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.accordion-item.active .accordion-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
 }
 
 .accordion-header {
@@ -323,33 +358,22 @@
   cursor: pointer;
 }
 
-.accordion-header h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #4b5563;
-  margin: 0;
-}
-
 .icon-toggle {
   font-size: 1.5rem;
   color: #9ca3af;
   font-weight: 400;
-}
-
-.accordion-item.active {
-  background-color: #ffffff;
-  border: 1px solid #7cd175;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-}
-
-.accordion-item.active .accordion-header h3 {
-  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
 }
 
 .accordion-item.active .icon-toggle {
   color: #4b5563;
 }
 
+/* 아코디언 내부 바디 리스트 디테일 */
 .accordion-body {
   margin-top: 24px;
   border-top: 1px solid #e5e7eb;
@@ -371,6 +395,7 @@
   list-style-type: disc;
 }
 
+/* 우측 이미지 뷰 영역 */
 .features-image-wrapper {
   flex: 1;
   width: 100%;
@@ -378,15 +403,17 @@
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  display: flex;
 }
 
 .features-image {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
 }
 
+/* 아코디언 영역 모바일 반응형 분기 */
 @media (max-width: 900px) {
   .features-container {
     flex-direction: column;
@@ -398,7 +425,9 @@
   }
 }
 
-/*TargetUserSection.jsx css 내부*/
+/* ==========================================================
+   5. 타겟 유저 영역 (TargetUserSection)
+   ========================================================== */
 .target-section {
   width: 100%;
   max-width: 1920px;
@@ -434,6 +463,7 @@
   letter-spacing: -0.02em;
 }
 
+/* 3열 카드 그리드 레이아웃 */
 .target-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -450,6 +480,7 @@
   box-sizing: border-box;
 }
 
+/* 이미지 격자 카드 설정 */
 .image-item img {
   width: 100%;
   height: 100%;
@@ -457,6 +488,7 @@
   object-fit: cover;
 }
 
+/* 텍스트 격자 카드 설정 */
 .text-item {
   display: flex;
   justify-content: center;
@@ -475,6 +507,7 @@
   font-weight: 700;
 }
 
+/* 파스텔 배경 및 폰트 컬러 매칭 */
 .text-item.bg-blue {
   background-color: #aed6f8;
   color: #1e3a8a;
@@ -490,14 +523,16 @@
   color: #581c87;
 }
 
+/* 타겟 그리드 모바일 반응형 분기 */
 @media (max-width: 900px) {
   .target-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/*FAQSection.jsx css 내부*/
-
+/* ==========================================================
+   6. 자주 묻는 질문 영역 (FAQSection)
+   ========================================================== */
 .faq-section {
   width: 100%;
   max-width: 1920px;
@@ -583,7 +618,6 @@
   margin: 0;
 }
 
-/* 아이콘이 튕겨나가지 않도록 flex 공간 및 크기 고정 */
 .faq-arrow-icon {
   display: flex;
   align-items: center;
@@ -598,7 +632,6 @@
   display: block;
 }
 
-/* 열렸을 때 위 방향(180도 회전)으로 꺾이도록 제어 */
 .faq-item.open .faq-arrow-icon {
   transform: rotate(-180deg);
 }
@@ -639,8 +672,9 @@
   margin: 0;
 }
 
-/*Footer.jsx css 내부*/
-
+/* ==========================================================
+   7. 푸터 하단 영역 (MainFooter)
+   ========================================================== */
 .main-footer {
   width: 100%;
   background-color: #000000;
@@ -728,4 +762,41 @@
     align-items: flex-start;
     gap: 6px;
   }
+}
+
+/* ==========================================================
+   8. 스크롤 인터랙션 애니메이션 (Scroll Animations)
+   ========================================================== */
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+}
+
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stg-1 {
+  transition-delay: 0s;
+}
+.stg-2 {
+  transition-delay: 0.1s;
+}
+.stg-3 {
+  transition-delay: 0.2s;
+}
+.stg-4 {
+  transition-delay: 0.3s;
+}
+.stg-5 {
+  transition-delay: 0.4s;
+}
+.stg-6 {
+  transition-delay: 0.5s;
 }
