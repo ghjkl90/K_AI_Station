@@ -1,0 +1,20 @@
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        primary: '#0f172a', // Navy from Design System
+        secondary: '#475569',
+        surface: '#f7f9fb',
+        'surface-dim': '#d8dadc',
+        outline: '#e2e8f0',
+      },
+      fontFamily: {
+        sans: ['Hanken Grotesk', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [],
+}
