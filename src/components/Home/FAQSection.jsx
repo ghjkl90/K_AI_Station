@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const faqs = [
+  const faqData = [
     {
       q: "AI를 처음 써보는 사람도 사용할 수 있나요?",
       a: "네, 가능합니다. K-AI Station은 AI를 처음 접하는 분들도 부담 없이 시작할 수 있도록 설계되었습니다. 복잡한 설정이나 전문 지식 없이, 간단한 선택과 안내를 따라가며 AI가 어떤 도움을 줄 수 있는지 자연스럽게 경험할 수 있습니다.",
@@ -26,54 +26,61 @@ export default function FAQSection() {
     },
   ];
 
-  return (
-    <section className="py-24 px-8 bg-white" id="faq">
-      <div className="max-w-[1280px] mx-auto">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1 rounded-full border border-[#0051d5] text-[#0051d5] text-[12px] font-semibold mb-4">
-            FAQ
-          </span>
-          <h2 className="text-[32px] font-bold">
-            자주 묻는 질문을 정리했습니다.
-          </h2>
-        </div>
+  const toggleFAQ = (index) => {
+    if (openIndex === index) {
+      setOpenIndex(null);
+    } else {
+      setOpenIndex(index);
+    }
+  };
 
-        <div className="max-w-4xl mx-auto border-t border-[#c6c6cd]">
-          {faqs.map((faq, index) => (
-            <div key={index} className="border-b border-[#c6c6cd]">
-              <button
-                className="w-full flex items-start gap-4 py-6 text-left group"
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-              >
-                <span className="text-[24px] font-bold text-[#45464d] pt-0.5">
-                  Q
-                </span>
-                <span className="flex-1 text-[18px] font-semibold group-hover:text-[#0051d5] transition-colors">
-                  {faq.q}
-                </span>
-                <span
-                  className={`material-symbols-outlined transform transition-transform ${openIndex === index ? "rotate-180" : ""}`}
-                >
-                  expand_more
-                </span>
-              </button>
+  return (
+    <section className="faq-section">
+      <div className="faq-header">
+        <span className="badge-faq">FAQ</span>
+        <h2 className="faq-title">자주 묻는 질문을 정리했습니다.</h2>
+      </div>
+
+      <div className="faq-container">
+        {faqData.map((item, index) => {
+          const isOpen = openIndex === index;
+          return (
+            <div key={index} className={`faq-item ${isOpen ? "open" : ""}`}>
               <div
-                className={`accordion-content bg-[#f2f4f6] rounded-lg mx-4 mb-4 transition-all ${openIndex === index ? "p-6 block" : "h-0 overflow-hidden"}`}
+                className="faq-question-box"
+                onClick={() => toggleFAQ(index)}
               >
-                {openIndex === index && (
-                  <div className="flex gap-4">
-                    <span className="text-[24px] font-bold text-[#0051d5]">
-                      A
-                    </span>
-                    <p className="text-[16px] text-[#191c1e] leading-relaxed">
-                      {faq.a}
-                    </p>
-                  </div>
-                )}
+                <div className="faq-q-text">
+                  <span className="prefix-q">Q</span>
+                  <h3>{item.q}</h3>
+                </div>
+                {/* 사라지지 않도록 구조를 확실히 잡은 화살표 아이콘 영역 */}
+                <div className="faq-arrow-icon">
+                  <svg
+                    fill="none"
+                    stroke="#64748b"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                  >
+                    <path d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <div className="faq-answer-box">
+                <div className="faq-a-content">
+                  <span className="prefix-a">A</span>
+                  <p>{item.a}</p>
+                </div>
               </div>
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </section>
   );
