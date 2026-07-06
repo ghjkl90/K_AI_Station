@@ -2,44 +2,28 @@ import React from "react";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 w-full z-50 bg-[#f7f9fb] border-b border-[#c6c6cd]">
-      <div className="flex justify-between items-center px-8 max-w-[1280px] mx-auto h-16">
-        <div className="flex items-center gap-4 cursor-pointer active:scale-95 duration-150">
-          <span className="material-symbols-outlined text-[#0051d5]">
-            language
-          </span>
-          <span className="text-24px font-bold text-black">K-AI Station</span>
-        </div>
-        <nav className="hidden md:flex gap-8 items-center">
-          <a
-            className="text-[#0051d5] font-semibold hover:bg-[#e6e8ea] transition-colors px-3 py-2 rounded"
-            href="#why"
+    <header className="main-header">
+      <div className="header-container">
+        {/* 좌측 로고 */}
+        <div className="header-logo">K-AI Station</div>
+
+        <div className="header-language">
+          <svg
+            className="icon-globe"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
           >
-            Home
-          </a>
-          <a
-            className="text-[#45464d] hover:bg-[#e6e8ea] transition-colors px-3 py-2 rounded"
-            href="#features"
-          >
-            Features
-          </a>
-          <a
-            className="text-[#45464d] hover:bg-[#e6e8ea] transition-colors px-3 py-2 rounded"
-            href="#target"
-          >
-            Target
-          </a>
-          <a
-            className="text-[#45464d] hover:bg-[#e6e8ea] transition-colors px-3 py-2 rounded"
-            href="#faq"
-          >
-            FAQ
-          </a>
-        </nav>
-        <div className="cursor-pointer active:scale-95 duration-150 p-2 rounded-full hover:bg-[#e6e8ea] transition-colors">
-          <span className="material-symbols-outlined text-[#0051d5]">
-            settings_accessibility
-          </span>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+            ></path>
+          </svg>
         </div>
       </div>
     </header>
