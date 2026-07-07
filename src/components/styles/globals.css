@@ -135,21 +135,58 @@ body {
   width: 100%;
   max-width: 1000px;
   height: auto;
-  margin-top: 50px;
+  margin-top: auto;
   margin-bottom: 0;
-  box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.2);
+
+  box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.15);
   border-radius: 16px 16px 0 0;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: none;
-  flex-shrink: 0;
+
+  display: flex;
+  align-items: flex-end;
 }
 
 .hero-mockup-image {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* ==========================================================
+    모바일 전용 반응형 튜닝
+   ========================================================== */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 100vh;
+  }
+
+  .hero-container {
+    padding-top: 80px;
+  }
+
+  .hero-title {
+    font-size: 2rem !important;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  .hero-buttons {
+    margin-bottom: 16px;
+  }
+
+  .btn-cta {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .hero-mockup-wrapper {
+    max-width: 90%;
+    border-radius: 12px 12px 0 0;
+  }
 }
 
 /* ==========================================================
