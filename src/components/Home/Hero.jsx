@@ -17,9 +17,14 @@ export default function Hero() {
           내 나이, 내 직업, 내 관심사로 AI를 직접 체험하는 공간입니다.
         </p>
 
-        {/* 메인 핵심 버튼 */}
         <div className="main-action-area">
-          <button className="btn-primary btn-experience">
+          <a
+            href="https://kai-station.com/home"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary btn-experience"
+            style={{ textDecoration: "none" }}
+          >
             <span>체험하기</span>
             <svg
               className="icon-arrow"
@@ -37,7 +42,7 @@ export default function Hero() {
                 d="M9 5l7 7-7 7"
               ></path>
             </svg>
-          </button>
+          </a>
         </div>
 
         {/* 완벽 균형 서브 버튼 듀오 킷 */}
