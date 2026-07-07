@@ -243,6 +243,48 @@ body {
   justify-content: space-between;
 }
 
+/* ==========================================================
+   모바일 반응형 튜닝 (Why Section 카드 잘림 완벽 해결)
+   ========================================================== */
+@media (max-width: 768px) {
+  .why-section {
+    padding: 60px 16px !important;
+  }
+
+  .why-content-card {
+    height: auto !important;
+    padding: 20px !important;
+    gap: 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .box-top {
+    height: auto !important;
+    padding: 20px 16px !important;
+  }
+
+  .box-bottom-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    gap: 16px !important;
+  }
+
+  .glass-box {
+    width: 100% !important;
+    height: auto !important;
+    padding: 24px 16px !important;
+    border-radius: 16px !important;
+  }
+
+  .glass-box p {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    word-break: keep-all;
+  }
+}
+
 /* 유리 박스 공통 스타일 */
 .glass-box {
   border-radius: 24px;
