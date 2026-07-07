@@ -7,10 +7,16 @@
   padding: 0;
 }
 
+html {
+  font-size: 14px !important;
+}
+
 html,
 body {
   width: 100%;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ==========================================================
