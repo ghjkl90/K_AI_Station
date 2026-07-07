@@ -62,130 +62,189 @@ body {
 }
 
 /* ==========================================================
-   2. 히어로 영역 (HeroSection)
+   2. 히어로 영역 (HeroSection) - 1번 무드 완벽 복구본
    ========================================================== */
 .hero-section {
   position: relative;
   width: 100%;
   margin: 0 auto;
   max-width: 1920px;
-
   height: 100vh;
-
-  padding-top: 80px;
-  background-image: url("../assets/main1.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   overflow: hidden;
+  background-color: #1ea9d9;
+}
+
+.aurora-bg {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at 30% 30%, #110ca6 0%, transparent 30%),
+    radial-gradient(circle at 70% 40%, #0692a8 0%, transparent 35%),
+    radial-gradient(circle at 35% 75%, #f0b115 0%, transparent 45%),
+    radial-gradient(circle at 80% 80%, #c4377a 0%, transparent 25%);
+  background-color: #2861fd;
+  filter: blur(70px);
+  animation: auroraRotation 20s linear infinite;
+  z-index: 1;
+}
+
+@keyframes auroraRotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .hero-container {
+  position: relative;
+  z-index: 2;
   width: 100%;
   max-width: 1200px;
-
-  height: 100%;
-  min-height: auto;
-  padding: 40px 20px 0 20px;
-
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  flex: 1;
-}
-
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.4;
-  letter-spacing: -0.02em;
-  margin: 0 0 32px 0;
+  justify-content: center;
   text-align: center;
 }
 
-/* 버튼 그룹 */
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-  margin: 0 0 48px 0;
+.hero-title {
+  font-size: 3.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
 }
 
-.btn-cta {
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  line-height: 1.6;
+  margin-bottom: 44px;
+}
+
+.main-action-area {
+  margin-bottom: 48px;
+}
+
+.btn-primary.btn-experience {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 28px;
-  border-radius: 50px;
-  font-size: 1rem;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 48px;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, #1d4ed8, #4338ca);
+  border: none;
+  border-radius: 50px;
   cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 대시보드 목업 이미지 래퍼 */
-.hero-mockup-wrapper {
-  width: 100%;
-  max-width: 1000px;
-  height: auto;
-  margin-top: auto;
-  margin-bottom: 0;
+.btn-primary.btn-experience:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 38px rgba(29, 78, 216, 0.6);
+}
 
-  box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.15);
-  border-radius: 16px 16px 0 0;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-bottom: none;
+.icon-arrow {
+  width: 21px !important;
+  height: 21px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transform: translateY(1px);
+  transition: transform 0.2s ease;
+}
 
+.btn-primary.btn-experience:hover .icon-arrow {
+  transform: translate(5px, 1px);
+}
+
+.sub-buttons-group {
   display: flex;
-  align-items: flex-end;
-}
-
-.hero-mockup-image {
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  object-position: top center;
 }
 
-/* ==========================================================
-    모바일 전용 반응형 튜닝
-   ========================================================== */
+.btn-sub-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 32px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.14);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-sub-cta .btn-icon {
+  width: 19px !important;
+  height: 19px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transform: translateY(-0.5px);
+}
+
+.btn-sub-cta span {
+  display: inline-block;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.btn-sub-cta:hover {
+  background-color: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.65);
+  transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
-  .hero-section {
-    height: 100vh;
-  }
-
-  .hero-container {
-    padding-top: 80px;
-  }
-
   .hero-title {
-    font-size: 2rem !important;
+    font-size: 2.2rem !important;
     line-height: 1.4;
-    margin-bottom: 16px;
   }
 
-  .hero-buttons {
-    margin-bottom: 16px;
+  .hero-subtitle {
+    font-size: 1rem !important;
+    line-height: 1.5;
+    margin-bottom: 36px;
   }
 
-  .btn-cta {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+  .sub-buttons-group {
+    width: 100%;
+    max-width: 280px;
+    flex-direction: column;
+    gap: 12px;
   }
 
-  .hero-mockup-wrapper {
-    max-width: 90%;
-    border-radius: 12px 12px 0 0;
+  .btn-sub-cta {
+    width: 100%;
+    padding: 14px;
   }
 }
 

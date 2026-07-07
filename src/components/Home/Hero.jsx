@@ -1,9 +1,11 @@
 import React from "react";
-import main2 from "../assets/main2.png";
 
 export default function Hero() {
   return (
     <section className="hero-section">
+      {/* 쨍하게 살아 움직이는 하이퍼 오로라 백그라운드 스크린 */}
+      <div className="aurora-bg"></div>
+
       <div className="hero-container">
         <h1 className="hero-title">
           누구나, 어렵지 않게
@@ -11,16 +13,42 @@ export default function Hero() {
           AI를 시작할 수 있는 곳.
         </h1>
 
-        <div className="hero-buttons">
-          <button className="btn-cta btn-download">
+        <p className="hero-subtitle">
+          내 나이, 내 직업, 내 관심사로 AI를 직접 체험하는 공간입니다.
+        </p>
+
+        {/* 메인 핵심 버튼 */}
+        <div className="main-action-area">
+          <button className="btn-primary btn-experience">
+            <span>체험하기</span>
             <svg
-              className="icon"
+              className="icon-arrow"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
               width="20"
-              height="24"
+              height="20"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2.5"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        {/* 완벽 균형 서브 버튼 듀오 킷 */}
+        <div className="sub-buttons-group">
+          <button className="btn-sub-cta">
+            <svg
+              className="btn-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 strokeLinecap="round"
@@ -31,15 +59,14 @@ export default function Hero() {
             </svg>
             <span>소개자료 받기</span>
           </button>
-          <button className="btn-cta btn-contact">
+
+          <button className="btn-sub-cta">
             <svg
-              className="icon"
+              className="btn-icon"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="24"
             >
               <path
                 strokeLinecap="round"
@@ -50,14 +77,6 @@ export default function Hero() {
             </svg>
             <span>문의하기</span>
           </button>
-        </div>
-
-        <div className="hero-mockup-wrapper">
-          <img
-            src={main2.src}
-            alt="K-AI Station Dashboard"
-            className="hero-mockup-image"
-          />
         </div>
       </div>
     </section>
