@@ -224,6 +224,42 @@ body {
 }
 
 /* ==========================================================
+   웹사이트 진입 시 프리미엄 소프트 페이드업 애니메이션
+   ========================================================== */
+.fade-up-item {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: premiumFadeUp 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes premiumFadeUp {
+  0% {
+    opacity: 0; /* [시작] 완전 투명 */
+    transform: translateY(12px); /* 12px 아래에서 출발 */
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 정교한 시차 릴레이 레이아웃 */
+.fade-up-item.delay-1 {
+  animation-delay: 0.1s;
+}
+.fade-up-item.delay-2 {
+  animation-delay: 0.35s;
+}
+.fade-up-item.delay-3 {
+  animation-delay: 0.6s;
+}
+.fade-up-item.delay-4 {
+  animation-delay: 0.85s;
+}
+
+/* ==========================================================
    9. 첫 로드 전용 소프트 페이드인 효과 (Soft Entry Motion)
    ========================================================== */
 .load-fade {
