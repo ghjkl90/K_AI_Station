@@ -3,21 +3,20 @@ import React from "react";
 export default function Hero() {
   return (
     <section className="hero-section">
-      {/* 쨍하게 살아 움직이는 하이퍼 오로라 백그라운드 스크린 */}
+      {/* 오로라 배경 */}
       <div className="aurora-bg"></div>
-
       <div className="hero-container">
-        <h1 className="hero-title">
+        <h1 className="hero-title load-fade stg-1">
           누구나, 어렵지 않게
           <br />
           AI를 시작할 수 있는 곳.
         </h1>
 
-        <p className="hero-subtitle">
+        <p className="hero-subtitle load-fade stg-2">
           내 나이, 내 직업, 내 관심사로 AI를 직접 체험하는 공간입니다.
         </p>
 
-        <div className="main-action-area">
+        <div className="main-action-area load-fade stg-3">
           <a
             href="https://kai-station.com/home"
             target="_blank"
@@ -32,8 +31,6 @@ export default function Hero() {
               stroke="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
             >
               <path
                 strokeLinecap="round"
@@ -45,8 +42,7 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* 완벽 균형 서브 버튼 듀오 킷 */}
-        <div className="sub-buttons-group">
+        <div className="sub-buttons-group load-fade stg-4">
           <button className="btn-sub-cta">
             <svg
               className="btn-icon"

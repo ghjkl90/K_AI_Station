@@ -223,6 +223,40 @@ body {
   transform: translateY(-2px);
 }
 
+/* ==========================================================
+   9. 첫 로드 전용 소프트 페이드인 효과 (Soft Entry Motion)
+   ========================================================== */
+.load-fade {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: loadSoftFadeIn 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes loadSoftFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.load-fade.stg-1 {
+  animation-delay: 0.4s;
+}
+.load-fade.stg-2 {
+  animation-delay: 0.8s;
+}
+.load-fade.stg-3 {
+  animation-delay: 1.2s;
+}
+.load-fade.stg-4 {
+  animation-delay: 1.6s;
+}
+
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.2rem !important;
